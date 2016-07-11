@@ -64,6 +64,13 @@ body {
     padding: 20px;
     background: rgb(98, 72, 143);
     color: white;
+    text-align: center;
+}
+
+.name-title {
+    /*width: 600px;*/
+    text-align: left;
+    display: inline-block;
 }
 
 .main-content {
