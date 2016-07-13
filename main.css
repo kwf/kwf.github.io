@@ -166,6 +166,11 @@ li {
     padding-bottom: 10px;
 }
 
+.tight-ul > li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
 h1 {
     font-size: 30pt;
     font-weight: 300;
