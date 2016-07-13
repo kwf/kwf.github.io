@@ -68,7 +68,7 @@ body {
     display: inline-block;
     font-family: "Source Sans Pro";
     font-weight: 200;
-    font-size: 40pt;
+    font-size: 39pt;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 30px;
@@ -199,6 +199,18 @@ h2 {
     padding-bottom: 15px;
     display: inline-block;
     width: 220px;
+}
+
+::-moz-selection {
+    /* background: rgb(242, 235, 255); */
+    background: rgb(98, 72, 143);
+    color: white;
+}
+
+::selection {
+    /* background: rgb(242, 235, 255); */
+    background: rgb(98, 72, 143);
+    color: white;
 }
 
 /* @media only screen and (max-width: 768px) { */
