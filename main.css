@@ -166,6 +166,11 @@ li {
     padding-bottom: 10px;
 }
 
+.tight-ul {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
 .tight-ul > li {
     padding-top: 3px;
     padding-bottom: 3px;
