@@ -57,42 +57,59 @@ body {
     text-align: center;
 }
 
-.site-title {
-    text-align: center;
+/* flexbox layout for top bar */
+
+#top-bar {
     background: rgb(98, 72, 143);
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.name-title {
-    width: 1200px;
+#site-title {
     text-align: left;
     display: inline-block;
+    max-width: 1140px;
+    min-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#name-title {
+    text-align: left;
     font-family: "Source Sans Pro";
     font-weight: 200;
     font-size: 39pt;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: white;
+    flex: 0 0 auto;
 }
 
-.main-content {
-    padding: 30px;
-    margin: auto;
-    height: 100%;
-    max-width: 1200px;
-    padding-bottom: 60px;
-    margin-top: 15px;
+#top-link-box {
+   font-size: 18pt;
+   flex: 0 0 auto;
 }
 
-.main-page-content {
-    font-size: 19pt;
+/* top link styles */
+
+#top-link-box a {
+   background: rgb(140, 115, 191);
+   padding: 2px;
+   padding-left: 8px;
+   padding-right: 8px;
+   color: white;
 }
 
-.main-page-content > div > p {
-    padding: 5px;
-    padding-top: 10px;
+#top-link-box a:hover {
+   background: white;
+   color: rgb(98, 72, 143);
 }
+
+/* link styles */
 
 a {
     background: rgb(242, 235, 255);
@@ -109,6 +126,8 @@ a:hover {
     background: rgb(98, 72, 143);
     color: white;
 }
+
+/* misc */
 
 .separator {
     height: 20pt;
@@ -128,24 +147,44 @@ p.intro {
     font-family: "Source Code Pro";
 }
 
-.page-text {
+/* flexbox layout for main content */
+
+#main-content {
+    padding: 30px;
+    margin: auto;
+    max-width: 1200px;
+    min-width: 600px;
+    margin-top: 15px;
+
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#sidebar {
+    margin-right: 30px;
+    flex: 0 0 auto;
+}
+
+#page-text {
     text-align: left;
     font-size: 15pt;
     font-weight: 300;
     line-height: 1.35;
     margin-top: -15px;
-    margin-left: 300px;
+
+    min-width: 300px;
+    max-width: 845px;
+    overflow: hidden;
+    flex: 3 1 auto;
 }
 
-div.page-text > p {
+/* text formatting for page */
+
+div#page-text p {
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.sidebar {
-    position: absolute;
-    margin-right: 45px;
-    height: 100%;
 }
 
 em {
@@ -213,6 +252,10 @@ h2 {
     padding-bottom: 17px;
     display: inline-block;
     width: 210px;
+}
+
+.paren-date {
+   color: #AAA
 }
 
 ::-moz-selection {
