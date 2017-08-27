@@ -68,7 +68,7 @@ body {
 #site-title {
     text-align: left;
     display: inline-block;
-    max-width: 1140px;
+    max-width: 1075px;
     min-width: 600px;
     margin: auto;
 
@@ -97,16 +97,35 @@ body {
 /* top link styles */
 
 #top-link-box a {
-   background: rgb(140, 115, 191);
-   padding: 2px;
-   padding-left: 8px;
-   padding-right: 8px;
-   color: white;
+    color: white;
+    background: rgb(140, 115, 191);
+
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #top-link-box a:hover {
-   background: white;
-   color: rgb(98, 72, 143);
+    background: white;
+    color: rgb(98, 72, 143);
+}
+
+#top-link-box a#download-cv img {
+    height: 16.75pt;
+    margin-bottom: -2.5pt;
+    margin-right: 2pt;
+}
+
+#top-link-box a#download-cv img:last-child {
+    display: none;
+}
+
+#top-link-box a#download-cv:hover img:first-child {
+    display: none;
+}
+
+#top-link-box a#download-cv:hover img:last-child {
+    display: inline-block;
 }
 
 /* link styles */
@@ -147,12 +166,12 @@ p.intro {
     font-family: "Source Code Pro";
 }
 
-/* flexbox layout for main content */
+/* main content */
 
 #main-content {
     padding: 30px;
     margin: auto;
-    max-width: 1200px;
+    max-width: 1075px;
     min-width: 600px;
     margin-top: 15px;
 
@@ -169,15 +188,38 @@ p.intro {
 
 #page-text {
     text-align: left;
+    margin-top: -15px;
+
     font-size: 15pt;
     font-weight: 300;
     line-height: 1.35;
-    margin-top: -15px;
+    hyphens: auto;
 
     min-width: 300px;
     max-width: 845px;
     overflow: hidden;
     flex: 3 1 auto;
+}
+
+a.media-link {
+    hyphens: manual;
+}
+
+/* footer */
+
+#footer {
+    color: white;
+    background: rgb(98, 72, 143);
+}
+
+#footer a {
+    color: white;
+    background: rgb(140, 115, 191);
+}
+
+#footer a:hover {
+    background: white;
+    color: rgb(98, 72, 143);
 }
 
 /* text formatting for page */
@@ -207,6 +249,10 @@ i {
 li {
     padding-top: 10px;
     padding-bottom: 10px;
+
+    /* hanging indent */
+    padding-left: 22px;
+    text-indent: -22px;
 }
 
 .tight-ul {
