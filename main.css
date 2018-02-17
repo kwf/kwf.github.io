@@ -68,7 +68,7 @@ body {
 #site-title {
     text-align: left;
     display: inline-block;
-    max-width: 1075px;
+    max-width: 1045px;
     min-width: 600px;
     margin: auto;
 
@@ -196,7 +196,7 @@ p.intro {
     hyphens: auto;
 
     min-width: 300px;
-    max-width: 845px;
+    max-width: 750px;
     overflow: hidden;
     flex: 3 1 auto;
 }
