@@ -41,7 +41,7 @@ q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	bord
+  border-spacing: 0;
 }
 
 /* STYLES */
@@ -210,6 +210,7 @@ a.media-link {
 #footer {
     color: white;
     background: rgb(98, 72, 143);
+    margin: 0;
 }
 
 #footer a {
