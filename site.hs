@@ -13,8 +13,7 @@ main = hakyll $ do
            "bibtex/*"    .||.
            "disk/*"      .||.
            "keybase.txt" .||.
-           "favicon.ico" .||.
-           "CNAME") $ do
+           "favicon.ico") $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -55,7 +54,7 @@ main = hakyll $ do
                 >>= cleanIndexUrls
 
     match "index.html" $ do
-        route cleanRoute
+        route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
