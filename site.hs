@@ -12,6 +12,7 @@ main = hakyll $ do
            "pdf/*"       .||.
            "bibtex/*"    .||.
            "disk/*"      .||.
+           "scripts/*"   .||.
            "keybase.txt" .||.
            "favicon.ico") $ do
         route   idRoute
