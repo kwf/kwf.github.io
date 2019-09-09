@@ -5,3 +5,4 @@ dist-newstyle/
 .sass-cache
 Gemfile.lock
 *.gem
+TAGS
