@@ -1,7 +1,14 @@
+<div class="archive">
 <ul>
     $for(posts)$
         <li>
-            <a href="$url$">$title$</a> - $date$
+            <h2><a href="$url$">$title$</a><span style="color: grey; font-size: 22pt"> - $date$</span></h2>
+            $if(teaser)$
+            $teaser$... <a href="$url$">Read more</a>
+            $else$
+            $content$
+            $endif$
         </li>
     $endfor$
 </ul>
+</div>

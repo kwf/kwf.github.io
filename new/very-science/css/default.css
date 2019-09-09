@@ -13,34 +13,34 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
   border-spacing: 0;
 }
 
@@ -254,21 +254,45 @@ b {
     font-weight: bold;
 }
 
-semi-bold {
-    font-weight: 500;
+.semi-bold {
+    font-weight: 400;
 }
 
 i {
     font-style: italic;
 }
 
-li {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.publications li {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: #fffbea;
+    border: 2px solid #ffd400;
+    line-height: 1.35;
 
     /* hanging indent */
-    padding-left: 22px;
-    text-indent: -22px;
+    /* padding-left: 22px; */
+    /* text-indent: -22px; */
+}
+
+.publications hr {
+    height: 2px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px dashed #ffd400;
+}
+
+.archive h2 {
+    font-size: 28pt;
+    font-weight: 400;
+}
+
+.archive li {
+    margin-top: 30px;
 }
 
 .tight-ul {
@@ -277,8 +301,8 @@ li {
 }
 
 .tight-ul > li {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 h1 {
@@ -294,7 +318,7 @@ h2 {
 }
 
 a.conference-link {
-    font-weight: 500;
+    font-weight: 400;
     /* background: rgb(146, 112, 204); */
     background: rgb(140, 115, 191);
     color: white;
@@ -338,9 +362,9 @@ p > code {
     font-family: "Source Code Pro";
     font-weight: 400;
     font-size: 80%;
-    border-radius: 4pt;
+    border-radius: 15px;
     background-color: #fffbea;
-    border: 1px solid #ffd400;
+    border: 2px solid #ffd400;
     /* background: #F5F5F5; */
     /* border: 1px solid #888; */
     position: relative;
@@ -354,7 +378,7 @@ div.sourceCode {
     border-radius: 8pt;
     padding: 14pt 14pt 14pt 14pt;
     background-color: #fffbea;
-    border: 1px solid #ffd400;
+    border: 2px solid #ffd400;
     margin: 20pt 0 20pt 0;
     line-height: 125%;
     overflow-x: auto;
@@ -415,3 +439,48 @@ div.sourceCode pre a {
 .sourceCode .re { }
 /* ErrorTok */
 .sourceCode .er { color: #D30102; font-weight: bold; }
+
+/* Expandable toggle boxes */
+/* <https://basicuse.net/articles/pl/textile/html_css/creating_a_toggle_box_to_collapse_or_expand_content_using_only_css3> */
+
+.toggle-box {
+    display: none;
+}
+
+.toggle-box + label {
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+
+.toggle-box + label + div {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.toggle-box:checked + label + div {
+    display: block;
+}
+
+.toggle-box + label:before {
+    background-color: #4F5150;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    content: "+";
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 5px;
+    text-align: center;
+    width: 20px;
+}
+
+.toggle-box:checked + label:before {
+    content: "\2212";
+}

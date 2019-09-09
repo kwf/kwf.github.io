@@ -1,0 +1,328 @@
+---
+title: Publications / Presentations
+---
+
+<p>
+In reverse chronological order, here are the highlights of the papers and talks
+I've published and presented over the years...
+</p>
+
+<div class="publications">
+    <ul>
+        <li><a class="conference-link" target="_blank" href="https://www.composeconference.org/2019/">Compose 2019</a>
+        <i>Functors of the World, Unite! (Talk)</i>
+        <hr/>
+
+        <input class="toggle-box" id="abstract-9" type="checkbox">
+        <label for="abstract-9">Abstract</label>
+        <div>
+            <p>To save myself from hubris, I use static types.<br/>
+                To save myself from tedium, I use type inference.
+                <p>Statically typed languages like Haskell would be unusably
+                    verbose if we had to write down the type for each piece of a
+                    program. Luckily, we don't have to: the compiler happily
+                    infers the types we don't annotate. Usually, we don't need
+                    to think about how it does this; we can play by an intuition
+                    that it thinks about types like we do...
+                    until it thinks something we didn't expect.</p>
+
+                <p>By understanding more deeply how type inference works, we can
+                more easily debug otherwise-unintuitive type errors, and
+                further, clarify our thinking to avoid surprises in the first
+                place. Frustratingly, many treatments of type inference are at
+                one of two extremes: either abstract deduction rules written on
+                paper, or complex code from the guts of a mature programming
+                language. As I see it, neither of these are optimal for
+                developing our intution while we program.</p>
+
+                <p>Let's learn to see inference how the compiler sees it, by
+                creating a small typechecker for our own mini-Haskell. A twist:
+                we'll melt away the incidental complexity of syntax manipulation
+                by representing our types and terms as explicit fixed points of
+                functors. We'll build our typechecker by first making a simple,
+                generic library for *structural unification* of traversable data
+                types, then by instantiating it with the terms and typing rules
+                of our particular language. In the process, we'll see how these
+                abstractions allow us to concisely implement type inference for
+                all sorts of terms, types, and type system features. Inference
+                need not be abstruse or complicated---with a dash of
+                functorality, it can be fun!</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a target="_blank" class="media-link" href="https://www.youtube.com/watch?v=8k7YH9st_8U">YouTube</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="https://conf.researchr.org/home/icfp-2018">ICFP 2018</a>
+        <i>Keep Your Laziness in Check</i>
+        <br/>
+        Kenneth Foner, Hengchu Zhang, and Leonidas Lampropoulos.
+        <hr/>
+
+        <input class="toggle-box" id="abstract-8" type="checkbox" >
+        <label for="abstract-8">Abstract</label>
+        <div>
+            <p>We introduce StrictCheck: a property-based random testing
+            framework for observing, specifying, and testing the strictness of
+            Haskell functions. Strictness is traditionally considered a
+            non-functional property; StrictCheck allows it to be tested as if it
+            were one, by reifying demands on data structures so they can be
+            manipulated and examined within Haskell. </p>
+            <p>Testing strictness requires us to 1) precisely specify the
+            strictness of functions, 2) efficiently observe the evaluation of data structures, and 3) correctly generate functions with random strictness. We tackle all three of these challenges, designing an efficient generic framework for precise dynamic strictness testing. StrictCheck can specify and test the strictness of any Haskell function---including higher-order ones---with only a constant factor of overhead, and requires no boilerplate for testing functions on Haskell-standard algebraic data types. We provide an expressive but low-level specification language as a foundation upon which to build future higher-level abstractions.</p>
+            <p>We demonstrate a non-trivial application of our library,
+            developing a correct specification of a data structure whose
+            properties intrinsically rely on subtle use of laziness: Okasaki's
+            constant-time purely functional queue.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a class="media-link" href="/pdf/StrictCheck.pdf" target="_blank">PDF</a>
+        <a class="media-link" href="https://hackage.haskell.org/package/StrictCheck" target="_blank">Hackage</a>
+        <a class="media-link" href="https://github.com/kwf/StrictCheck" target="_blank">GitHub</a>
+        <a target="_blank" href="/bibtex/StrictCheck.bib">BibTeX</a>
+        <a href="https://dl.acm.org/citation.cfm?id=3236797" target="_blank">ACM DL</a>
+        <a target="_blank" class="media-link" href="https://www.youtube.com/watch?v=tNFRoyUveb4">YouTube</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="https://conf.researchr.org/home/icfp-2018">ICFP 2018</a>
+        <i>What's the Difference: A Functional Pearl on Subtracting Bijections</i>
+        <br/>
+        Brent Yorgey and Kenneth Foner.
+        <hr/>
+
+        <input class="toggle-box" id="abstract-7" type="checkbox" >
+        <label for="abstract-7">Abstract</label>
+        <div>
+            <p>It is a straightforward exercise to write a program to "add" two
+            bijections---resulting in a bijection between two sum types, which
+            runs the first bijection on elements from the left summand and the
+            second bijection on the right. It is much less obvious how to
+            "subtract" one bijection from another. This problem has been studied
+            in the context of combinatorics, with several computational
+            principles known for producing the "difference" of two bijections.
+            We consider the problem from a computational and algebraic
+            perspective, showing how to construct such bijections at a high
+            level, avoiding pointwise reasoning or being forced to construct the
+            forward and backward directions separately---without sacrificing
+            performance.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a class="media-link" href="/pdf/Whats_The_Difference.pdf" target="_blank">PDF</a>
+        <a class="media-link" href="https://github.com/kwf/GCBP" target="_blank">GitHub</a>
+        <a target="_blank" href="/bibtex/Whats_The_Difference.bib">BibTeX</a>
+        <a href="https://dl.acm.org/citation.cfm?id=3236796" target="_blank">ACM DL</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="https://www.haskell.org/haskell-symposium/2017/">Haskell 2017</a>
+        <i>Ode On A Random Urn (Functional Pearl)</i>
+        <br/>
+        Leonidas Lampropoulos, Antal Spector-Zabusky, and Kenneth Foner.
+        <hr/>
+
+        <input class="toggle-box" id="abstract-6" type="checkbox" >
+        <label for="abstract-6">Abstract</label>
+        <div>
+            <p>We present the urn: a simple tree-based data structure
+            that supports sampling from and updating discrete probability
+            distributions in logarithmic time. We avoid the usual complexity of
+            traditional self-balancing binary search trees by not keeping values
+            in a specific order. Instead, we keep the tree maximally balanced at
+            all times using a single machine word of overhead: its size.</p>
+
+            <p>Urns provide an alternative interface for the frequency
+            combinator from the QuickCheck library that allows for
+            asymptotically more efficient sampling from dynamically-updated
+            distributions. They also facilitate backtracking in property-based
+            random testing, and can be applied to such complex examples from the
+            literature as generating well-typed lambda terms or information flow
+            machine states, demonstrating significant speedups.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a class="media-link" href="/pdf/Ode_On_A_Random_Urn.pdf" target="_blank">PDF</a>
+        <a class="media-link" href="https://hackage.haskell.org/package/urn-random" target="_blank">Hackage</a>
+        <a class="media-link" href="https://github.com/antalsz/urn-random" target="_blank">GitHub</a>
+        <a target="_blank" href="/bibtex/Ode_On_A_Random_Urn.bib">BibTeX</a>
+        <a href="https://dl.acm.org/citation.cfm?id=3122959" target="_blank">ACM DL</a>
+    </li>
+
+    <li><a target="_blank" class="conference-link" href="http://www.composeconference.org/2017/program/">
+        Compose 2017</a>
+        <i>Choose Your Own Derivative (Talk)</i>
+        <hr/>
+
+        <input class="toggle-box" id="abstract-5" type="checkbox" >
+        <label for="abstract-5">Abstract</label>
+        <div>
+            <p>In event-driven programming, an event is a computation that will
+            eventually produce a value. Selective choice is a mechanism that
+            takes in a list of events, runs them all concurrently, and returns
+            the value of the first event to terminate. It is an extremely useful
+            primitive, but traditionally is restricted to lists of events
+            returning values of the same type. In this talk we describe a
+            type-directed way to extend selective choice to arbitrary data
+            structures containing events, including data structures containing
+            events of different types, such as arbitrary tuples.</p>
+
+            <p>The crucial observation we make is that selecting one event out
+            of a data structure is reminiscent of zipping into that data
+                structure. Conor McBride describes a way to generalize zippers
+                to algebraic data types in a generic way by means of an
+                operation that acts like a partial derivative from calculus. We
+                extend this notion of derivative to data types containing
+                events, and show how generalized selective choice can be given a
+                signature based on this idea.</p>
+
+            <p>Finally, we implement generalized selective choice in Haskell
+                using generic and dependently-typed features of GHC.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a target="_blank" class="media-link" href="https://www.youtube.com/watch?v=79zzgL75K8Q">YouTube</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="http://conf.researchr.org/track/icfp-2016/tyde-2016-papers">TyDe 2016</a>
+        <i>Choose Your Own Derivative (Extended Abstract)</i>
+        <br/>
+        Jennifer Paykin, Antal Spector-Zabusky, and Kenneth Foner.
+        <hr/>
+
+        <input class="toggle-box" id="abstract-4" type="checkbox" >
+        <label for="abstract-4">Abstract</label>
+        <div>
+            <p>We discuss a generalization of the synchronization mechanism
+            selective choice. We argue that selective choice can be extended to
+            synchronize arbitrary data structures of events, based on a typing
+            paradigm introduced by McBride: the derivatives of recursive data
+            types. We discuss our work in progress implementing generalized
+            selective choice as a Haskell library based on generic programming. </p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a class="media-link" href="/pdf/Choose_Your_Own_Derivative.pdf" target="_blank">PDF</a>
+        <a class="media-link" href="https://github.com/antalsz/choose-your-own-derivative" target="_blank">GitHub</a>
+        <a class="media-link" href="/bibtex/choose-your-own-derivative.bib" target="_blank">BibTeX</a>
+        <a class="media-link" href="http://dl.acm.org/citation.cfm?id=2976024" target="_blank">ACM DL</a>
+    </li>
+
+    <li><a target="_blank" class="conference-link" href="http://www.composeconference.org/2016/program/">
+        Compose 2016</a>
+        <i>"There and Back Again" and What Happened After (Talk)</i>
+        <hr/>
+
+        <input class="toggle-box" id="abstract-3" type="checkbox" >
+        <label for="abstract-3">Abstract</label>
+        <div>
+            <p>Danvy and Goldberg's "There and Back Again," puts the "fun" in
+            "functional pearl." This classic, underappreciated paper describes a
+            clever new pattern for implementing a large family of functions over
+            lists while using only one traversal, rather than the multiple
+            traversals that many other approaches require. The technique
+            naturally gives rise to elegant algorithms for computing symbolic
+                convolutions, generalized palindrome tests, and Catalan numbers.</p>
+
+            <p>In the introduction to the paper, the authors remark that in a
+            dependently typed language it would be possible to give precise
+            types to analogous functions over *length-indexed lists*--lists
+            which carry their lengths in their types. We take this as a
+            challenge, translating the "There and Back Again" (TABA) pattern into modern idiomatic Haskell, making inherent use of cutting-edge features of GHC's type system.</p>
+
+            <p>Reconstructing "There and Back Again" in this richer setting
+            requires us to elucidate some subtle arithmetic invariants of the
+            pattern, both to ourselves and to the type system. To automatically
+            verify the tricky arithmetic latent in the pearl, we use GHC's brand
+            new type-checker plugin interface to augment our type system with
+            the power of the Z3 theorem prover. Writing down these precise types
+            also gives us new insight into the structure of this programming
+            pattern. Along this journey of translation, we may simultaneously
+            satisfy the type-checker, the theorem-prover, and our own curiosity.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a target="_blank" class="media-link" href="https://www.youtube.com/watch?v=u_OsUlwkmBQ">YouTube</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="https://www.haskell.org/haskell-symposium/2015/">Haskell 2015</a>
+        <i>Functional Pearl: Getting a Quick Fix on Comonads</i>
+        <br/>
+        Kenneth Foner.
+        <hr/>
+
+        <input class="toggle-box" id="abstract-2" type="checkbox" >
+        <label for="abstract-2">Abstract</label>
+        <div>
+            <p>A piece of functional programming folklore due to Piponi provides
+            Löb's theorem from modal provability logic with a computational
+            interpretation as an unusual fixed point. Interpreting modal
+            necessity as an arbitrary Functor in Haskell, the "type" of Löb's
+            theorem is inhabited by a fixed point function allowing each part of
+                a structure to refer to the whole.</p>
+
+            <p>However, Functor's logical interpretation may be used to prove
+            Löb's theorem only by relying on its implicit functorial strength,
+            an axiom not available in the provability modality. As a result, the
+            well known loeb fixed point "cheats" by using functorial strength to
+                implement its recursion.</p>
+
+            <p>Rather than Functor, a closer Curry analogue to modal logic's
+                Howard inspiration is a closed (semi-)comonad, of which
+                Haskell's ComonadApply typeclass provides analogous structure.
+                Its computational interpretation permits the definition of a
+                novel fixed point function allowing each part of a structure to
+                refer to its own context within the whole. This construction
+                further guarantees maximal sharing and asymptotic efficiency
+                superior to loeb for locally contextual computations upon a
+                large class of structures. With the addition of a distributive
+                law, closed comonads may be composed into spaces of arbitrary
+                dimensionality while preserving the performance guarantees of
+                this new fixed point.</p>
+
+            <p>From these elements, we construct a small embedded domain-specific language to elegantly express and evaluate multidimensional "spreadsheet-like" recurrences for a variety of cellular automata.</p>
+        </div>
+
+        <hr/>
+        <span class="semi-bold">Links: </span>
+        <a class="media-link" href="/pdf/GQFC.pdf" target="_blank">PDF</a>
+        <a class="media-link" href="https://github.com/kwf/gqfc" target="_blank">GitHub</a>
+        <a class="media-link" target="_blank" href="/bibtex/GQFC.bib">BibTeX</a>
+        <a class="media-link" href="http://dl.acm.org/citation.cfm?id=2804310" target="_blank">ACM DL</a>
+    </li>
+
+    <li><a class="conference-link" target="_blank" href="https://web.archive.org/web/20140707213116/http://researcher.watson.ibm.com/researcher/view_group.php?id=5237">PLAS 2014</a>
+        <i>You Sank My Battleship!: A Case Study in Secure Programming</i>
+        <br/>
+        Alley Stoughton, Andrew Johnson, Sam Beller, Karishma Chadha, Dennis Chen, Kenneth Foner, and Michael Zhivich.
+
+        <hr/>
+
+        <input class="toggle-box" id="abstract-1" type="checkbox" >
+        <label for="abstract-1">Abstract</label>
+        <div><p>We report on a case study in secure programming, focusing on the
+        design, implementation and auditing of programs for playing the board
+        game Battleship. We begin by precisely defining the security of
+        Battleship programs, borrowing ideas from theoretical cryptography. We
+        then consider three implementations of Battleship: one in Concurrent ML
+        featuring a trusted referee; one in Haskell/LIO using information flow
+        control to avoid needing a trusted referee; and one in Concurrent ML
+        using access control to avoid needing such a referee. All three
+        implementations employ data abstraction in key ways.</p></div>
+
+        <hr/>
+
+        <span class="semi-bold">Links: </span>
+        <a target="_blank" class="media-link" href="/pdf/You_Sank_My_Battleship.pdf" target="_blank">PDF</a>
+        <a target="_blank" class="media-link" href="/bibtex/You_Sank_My_Battleship.bib">BibTeX</a>
+        <a href="http://dl.acm.org/citation.cfm?id=2637115" target="_blank" class="media-link">ACM DL</a>
+        <a target="_blank" class="media-link" href="https://www.youtube.com/watch?v=kpIXiHzH-OY&index=10&list=PLnqUlCo055hV5dPC-4VWeXzhI8ooeTsVy">YouTube</a>
+    </li>
+</ul>
+</div>
