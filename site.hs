@@ -14,6 +14,7 @@ main = hakyll $ do
            "disk/*"      .||.
            "scripts/*"   .||.
            "keybase.txt" .||.
+           "CNAME"       .||.
            "favicon.ico") $ do
         route   idRoute
         compile copyFileCompiler
