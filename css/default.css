@@ -1,0 +1,486 @@
+/* RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+.container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+body {
+    font-family: "Source Sans Pro";
+    color: black;
+    line-height: 300%;
+    text-align: center;
+}
+
+/* flexbox layout for top bar */
+
+#top-bar {
+    background: rgb(98, 72, 143);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#site-title {
+    text-align: left;
+    display: inline-block;
+    max-width: 910px;
+    min-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#name-title {
+    text-align: left;
+    font-family: "Source Sans Pro";
+    font-weight: 200;
+    font-size: 39pt;
+    margin-top: 20px;
+    margin-bottom: 27px;
+    margin-right: 16px;
+    color: white;
+    flex: 0 0 auto;
+}
+
+#top-link-box {
+   font-size: 18pt;
+   flex: 0 0 auto;
+   /* border: 1px solid red; */
+   height: 95px;
+   padding-top: 22px;
+}
+
+/* top link styles */
+
+#top-link-box a {
+    color: white;
+    background: rgb(140, 115, 191);
+    margin-left: 10px;
+    padding: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#top-link-box a:hover {
+    background: white;
+    color: rgb(98, 72, 143);
+}
+
+#top-link-box a#download-cv img {
+    height: 16.75pt;
+    margin-bottom: -2.5pt;
+    margin-right: 2pt;
+}
+
+#top-link-box a#download-cv img:last-child {
+    display: none;
+}
+
+#top-link-box a#download-cv:hover img:first-child {
+    display: none;
+}
+
+#top-link-box a#download-cv:hover img:last-child {
+    display: inline-block;
+}
+
+/* link styles */
+
+a {
+    text-decoration: none;
+    border-radius: 4pt;
+    background: rgb(242, 235, 255);
+    color: rgb(98, 72, 143);
+    padding: 0pt 3pt 0pt 3pt;
+}
+
+a:not(.sourceLine):hover {
+    background: rgb(98, 72, 143);
+    color: white;
+}
+
+/* misc */
+
+.separator {
+    height: 20pt;
+}
+
+.bigger {
+    font-size: 135%;
+}
+
+p.intro {
+    font-size: 45pt;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.teletype {
+    font-family: "Source Code Pro";
+}
+
+/* main content */
+
+#main-content {
+    padding: 30px;
+    margin: auto;
+    max-width: 1075px;
+    min-width: 600px;
+    margin-top: 15px;
+
+    /* display: flex; */
+    /* flex-flow: row; */
+    /* align-items: stretch; */
+    /* justify-content: center; */
+}
+
+#sidebar {
+    margin-right: 30px;
+    flex: 0 0 auto;
+}
+
+a.media-link {
+    hyphens: manual;
+}
+
+/* footer */
+
+footer {
+    margin-top: 30pt;
+    border-top: 1px solid #888;
+    line-height: 150%;
+    padding: 8pt;
+    color: #666;
+    background: #F5F5F5;
+    font-size: 14pt;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* text formatting for page */
+
+#main-content {
+    text-align: left;
+    min-width: 300px;
+    max-width: 960px;
+    font-size: 18pt;
+    font-weight: 300;
+    line-height: 1.35;
+    /* hyphens: auto; */
+    /* -moz-hyphens: auto; */
+    /* text-align: justify; */
+    /* text-justify: inter-word; */
+}
+
+div#main-content p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+em {
+    font-style: italic;
+    font-weight: 500;
+}
+
+b {
+    font-weight: bold;
+}
+
+.semi-bold {
+    font-weight: 400;
+}
+
+i {
+    font-style: italic;
+}
+
+.publications li {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: #fffbea;
+    border: 2px solid #ffd400;
+    line-height: 1.35;
+
+    /* hanging indent */
+    /* padding-left: 22px; */
+    /* text-indent: -22px; */
+}
+
+.publications hr {
+    height: 2px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px dashed #ffd400;
+}
+
+.archive h2 {
+    font-size: 28pt;
+    font-weight: 400;
+}
+
+.archive li {
+    margin-top: 30px;
+}
+
+.tight-ul {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.tight-ul > li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h1 {
+    font-size: 42pt;
+    font-weight: 300;
+    margin-bottom: 10px;
+    /* color: rgb(98, 72, 143); */
+}
+
+h2 {
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+a.conference-link {
+    font-weight: 400;
+    /* background: rgb(146, 112, 204); */
+    background: rgb(140, 115, 191);
+    color: white;
+    margin-right: 3pt;
+    padding: 0pt 3pt 0pt 3pt;
+}
+
+.sidebar-box {
+    text-align: left;
+    margin-top: 15px;
+    line-height: 2;
+    font-size: 13pt;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    display: inline-block;
+    width: 210px;
+}
+
+.paren-date {
+   color: #AAA
+}
+
+::-moz-selection {
+    /* background: rgb(242, 235, 255); */
+    background: rgb(98, 72, 143);
+    color: white;
+}
+
+::selection {
+    /* background: rgb(242, 235, 255); */
+    background: rgb(98, 72, 143);
+    color: white;
+}
+
+/* Syntax highlighting */
+
+p > code {
+    font-family: "Source Code Pro";
+    font-weight: 400;
+    font-size: 80%;
+    border-radius: 15px;
+    background-color: #fffbea;
+    border: 2px solid #ffd400;
+    /* background: #F5F5F5; */
+    /* border: 1px solid #888; */
+    position: relative;
+    bottom: 1pt;
+    padding: 0 3pt 0 3pt;
+    margin: 0 2pt 0 2pt;
+    color: #555555;
+}
+
+div.sourceCode {
+    border-radius: 8pt;
+    padding: 14pt 14pt 14pt 14pt;
+    background-color: #fffbea;
+    border: 2px solid #ffd400;
+    margin: 20pt 0 20pt 0;
+    line-height: 125%;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 87%;
+}
+
+div.sourceCode pre {
+    font-family: "Source Code Pro";
+    font-weight: 400;
+    font-size: 85%;
+}
+
+div.sourceCode pre a {
+    background: transparent;
+    color: #555555;
+}
+
+/* Generated by pandoc. */
+/* table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre */
+/* { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; } */
+/* td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; } */
+/* td.sourceCode { padding-left: 5px; } */
+/* .sourceCode span.kw { color: #007020; font-weight: bold; } */
+/* .sourceCode span.dt { color: #902000; } */
+/* .sourceCode span.dv { color: #40a070; } */
+/* .sourceCode span.bn { color: #40a070; } */
+/* .sourceCode span.fl { color: #40a070; } */
+/* .sourceCode span.ch { color: #4070a0; } */
+/* .sourceCode span.st { color: #4070a0; } */
+/* .sourceCode span.co { color: #60a0b0; font-style: italic; } */
+/* .sourceCode span.ot { color: #007020; } */
+/* .sourceCode span.al { color: red; font-weight: bold; } */
+/* .sourceCode span.fu { color: #06287e; } */
+/* .sourceCode span.re { } */
+/* .sourceCode span.er { color: red; font-weight: bold; } */
+
+/* KeyWordTok */
+.sourceCode .kw { color: #268BD2; }
+/* DataTypeTok */
+.sourceCode .dt { color: #268BD2; }
+
+/* DecValTok (decimal value), BaseNTok, FloatTok */
+.sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: #D33682; }
+/* CharTok */
+.sourceCode .ch { color: #DC322F; }
+/* StringTok */
+.sourceCode .st { color: #2AA198; }
+/* CommentTok */
+.sourceCode .co { color: #93A1A1; }
+/* OtherTok */
+.sourceCode .ot { color: #A57800; }
+/* AlertTok */
+.sourceCode .al { color: #CB4B16; font-weight: bold; }
+/* FunctionTok */
+.sourceCode .fu { color: #268BD2; }
+/* RegionMarkerTok */
+.sourceCode .re { }
+/* ErrorTok */
+.sourceCode .er { color: #D30102; font-weight: bold; }
+
+/* Expandable toggle boxes */
+/* <https://basicuse.net/articles/pl/textile/html_css/creating_a_toggle_box_to_collapse_or_expand_content_using_only_css3> */
+
+.toggle-box {
+    display: none;
+}
+
+.toggle-box + label {
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+
+.toggle-box + label + div {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.toggle-box:checked + label + div {
+    display: block;
+}
+
+.toggle-box + label:before {
+    background-color: #4F5150;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    content: "+";
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 5px;
+    text-align: center;
+    width: 20px;
+}
+
+.toggle-box:checked + label:before {
+    content: "\2212";
+}
