@@ -8,7 +8,13 @@ import           Data.List
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match ("images/*" .||. "pdf/*" .||. "bibtex/*") $ do
+    match ("images/*"    .||.
+           "pdf/*"       .||.
+           "bibtex/*"    .||.
+           "disk/*"      .||.
+           "keybase.txt" .||.
+           "favicon.ico" .||.
+           "CNAME") $ do
         route   idRoute
         compile copyFileCompiler
 
