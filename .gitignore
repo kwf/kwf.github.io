@@ -1,4 +1,7 @@
 _site
+_cache
+.stack-work/
+dist-newstyle/
 .sass-cache
 Gemfile.lock
 *.gem
