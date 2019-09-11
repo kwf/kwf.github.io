@@ -5,7 +5,10 @@
         <title>very.science</title>
         <meta name="keywords" content="Kenneth Foner,Kenny Foner,University of Pennsylvania,UPenn,Programming Languages,Haskell,PL,Type Systems">
         <link rel="stylesheet" type="text/css" href="../css/default.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700|Source+Sans+Pro:200,300,400,500,700&subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,500,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
         <script src="../scripts/moment.min.js"></script>
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -40,7 +43,7 @@
 To save myself from tedium, I use type inference.</p>
 <p>Statically typed languages like Haskell would be unusably verbose if we had to write down the type for each piece of a program. Luckily, we don’t have to: the compiler happily infers the types we don’t annotate. Usually, we don’t need to think about how it does this; we can play by an intuition that it thinks about types like we do… until it thinks something we didn’t expect.</p>
 <p>By understanding more deeply how type inference works, we can more easily debug otherwise-unintuitive type errors, and further, clarify our thinking to avoid surprises in the first place. Frustratingly, many treatments of type inference are at one of two extremes: either abstract deduction rules written on paper, or complex code from the guts of a mature programming language. As I see it, neither of these are optimal for developing our intution while we program.</p>
-<p>Let’s learn to see inference how the compiler sees it, by creating a small typechecker for our own mini-Haskell. A twist: we’ll melt away the incidental complexity of syntax manipulation by representing our types and terms as explicit fixed points of functors. We’ll build our typechecker by first making a simple, generic library for *structural unification* of traversable data types, then by instantiating it with the terms and typing rules of our particular language. In the process, we’ll see how these abstractions allow us to concisely implement type inference for all sorts of terms, types, and type system features. Inference need not be abstruse or complicated—with a dash of functorality, it can be fun!</p>
+<p>Let’s learn to see inference how the compiler sees it, by creating a small typechecker for our own mini-Haskell. A twist: we’ll melt away the incidental complexity of syntax manipulation by representing our types and terms as explicit fixed points of functors. We’ll build our typechecker by first making a simple, generic library for <em>structural unification</em> of traversable data types, then by instantiating it with the terms and typing rules of our particular language. In the process, we’ll see how these abstractions allow us to concisely implement type inference for all sorts of terms, types, and type system features. Inference need not be abstruse or complicated—with a dash of functorality, it can be fun!</p>
 </div>
 <hr />
 <span class="semi-bold">Links: </span> <a href="https://www.youtube.com/watch?v=8k7YH9st_8U" class="media-link">YouTube</a></li>
