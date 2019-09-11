@@ -40,13 +40,13 @@ I've published and presented over the years...
                 we'll melt away the incidental complexity of syntax manipulation
                 by representing our types and terms as explicit fixed points of
                 functors. We'll build our typechecker by first making a simple,
-                generic library for *structural unification* of traversable data
-                types, then by instantiating it with the terms and typing rules
-                of our particular language. In the process, we'll see how these
-                abstractions allow us to concisely implement type inference for
-                all sorts of terms, types, and type system features. Inference
-                need not be abstruse or complicated---with a dash of
-                functorality, it can be fun!</p>
+                    generic library for <i>structural unification</i> of
+                traversable data types, then by instantiating it with the terms
+                and typing rules of our particular language. In the process,
+                we'll see how these abstractions allow us to concisely implement
+                type inference for all sorts of terms, types, and type system
+                features. Inference need not be abstruse or complicated---with a
+                dash of functorality, it can be fun!</p>
         </div>
 
         <hr/>
@@ -70,7 +70,16 @@ I've published and presented over the years...
             were one, by reifying demands on data structures so they can be
             manipulated and examined within Haskell. </p>
             <p>Testing strictness requires us to 1) precisely specify the
-            strictness of functions, 2) efficiently observe the evaluation of data structures, and 3) correctly generate functions with random strictness. We tackle all three of these challenges, designing an efficient generic framework for precise dynamic strictness testing. StrictCheck can specify and test the strictness of any Haskell function---including higher-order ones---with only a constant factor of overhead, and requires no boilerplate for testing functions on Haskell-standard algebraic data types. We provide an expressive but low-level specification language as a foundation upon which to build future higher-level abstractions.</p>
+            strictness of functions, 2) efficiently observe the evaluation of
+            data structures, and 3) correctly generate functions with random
+            strictness. We tackle all three of these challenges, designing an
+            efficient generic framework for precise dynamic strictness testing.
+            StrictCheck can specify and test the strictness of any Haskell
+            function---including higher-order ones---with only a constant factor
+            of overhead, and requires no boilerplate for testing functions on
+            Haskell-standard algebraic data types. We provide an expressive but
+            low-level specification language as a foundation upon which to build
+            future higher-level abstractions.</p>
             <p>We demonstrate a non-trivial application of our library,
             developing a correct specification of a data structure whose
             properties intrinsically rely on subtle use of laziness: Okasaki's
