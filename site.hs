@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import qualified Hakyll.Core.Identifier as Ident
 import           System.FilePath
 import           Data.List
 
@@ -23,15 +24,17 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["publications.html"]) $ do
+    let toplevel = [ "publications.html" ]
+
+    match (fromList toplevel) $ do
         route   $ cleanRoute
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= cleanIndexUrls
 
-    match "posts/*" $ do
-        route   $ cleanRoute
+    match ("posts/*") $ do
+        route   $ cleanRoute `composeRoutes` gsubRoute "posts/" (const "")
         compile $ pandocCompiler
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
@@ -105,3 +108,11 @@ cleanIndex url
     | idx `isSuffixOf` url = take (length url - length idx) url
     | otherwise            = url
   where idx = "index.html"
+
+--------------------------------------------------------------------------------
+-- Lift a bunch of static things to the top level
+
+liftStaticDir dir =
+  match (fromList [fromFilePath (dir ++ "/*")]) $ do
+    route (gsubRoute (dir ++ "/") (const ""))
+    compile copyFileCompiler
