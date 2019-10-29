@@ -35,13 +35,16 @@
                 <p>In reverse chronological order, here are the highlights of the papers and talks I’ve published and presented over the years…</p>
 <div class="publications">
 <ul>
+<li><a href="https://2019.splashcon.org/" class="conference-link">SPLASH 2019</a> <em>How Can I Academia When My Brain Can’t Even (Talk)</em>
+<hr />
+<span class="semi-bold">Links: </span> <a href="../PLMW19/" class="media-link">Blog</a> <a href="https://docs.google.com/presentation/d/e/2PACX-1vRoS-AQCpSlzrX3_Vzq6HNa7TEO-gz7zEUPAJTZwCq6GhCPMq1DXVTFxV7jIlNzXrVqds5qlujd8wd8/pub?start=false&amp;loop=false&amp;delayms=0" class="media-link">Slides</a></li>
 <li><a href="https://www.composeconference.org/2019/" class="conference-link">Compose 2019</a> <em>Functors of the World, Unite! (Talk)</em>
 <hr />
 <input class="toggle-box" id="abstract-9" type="checkbox"> <label for="abstract-9">Abstract</label>
 <div>
 <p>To save myself from hubris, I use static types.<br />
 To save myself from tedium, I use type inference.</p>
-<p>Statically typed languages like Haskell would be unusably verbose if we had to write down the type for each piece of a program. Luckily, we don’t have to: the compiler happily infers the types we don’t annotate. Usually, we don’t need to think about how it does this; we can play by an intuition that it thinks about types like we do… until it thinks something we didn’t expect.</p>
+<p>Statically typed languages like Haskell would be <unu></unu>sably verbose if we had to write down the type for <each></each> piece of a program. Luckily, we don’t have to: the compiler happily infers the types we don’t annotate. Usually, we don’t need to think about how it does this; we can play by an intuition that it thinks about types like we do… until it thinks something we didn’t expect.</p>
 <p>By understanding more deeply how type inference works, we can more easily debug otherwise-unintuitive type errors, and further, clarify our thinking to avoid surprises in the first place. Frustratingly, many treatments of type inference are at one of two extremes: either abstract deduction rules written on paper, or complex code from the guts of a mature programming language. As I see it, neither of these are optimal for developing our intution while we program.</p>
 <p>Let’s learn to see inference how the compiler sees it, by creating a small typechecker for our own mini-Haskell. A twist: we’ll melt away the incidental complexity of syntax manipulation by representing our types and terms as explicit fixed points of functors. We’ll build our typechecker by first making a simple, generic library for <em>structural unification</em> of traversable data types, then by instantiating it with the terms and typing rules of our particular language. In the process, we’ll see how these abstractions allow us to concisely implement type inference for all sorts of terms, types, and type system features. Inference need not be abstruse or complicated—with a dash of functorality, it can be fun!</p>
 </div>
