@@ -37,7 +37,7 @@ main = hakyll $ do
 
     match (fromList standalone) $ do
          route   $ cleanRoute
-         compile $ pandocCompiler
+         compile $ getResourceString
             >>= relativizeUrls
             >>= cleanIndexUrls
 
