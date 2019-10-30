@@ -33,6 +33,14 @@ main = hakyll $ do
             >>= relativizeUrls
             >>= cleanIndexUrls
 
+    let standalone = [ "jazz.html" ]
+
+    match (fromList standalone) $ do
+         route   $ cleanRoute
+         compile $ pandocCompiler
+            >>= relativizeUrls
+            >>= cleanIndexUrls
+
     match ("posts/*") $ do
         route   $ cleanRoute `composeRoutes` gsubRoute "posts/" (const "")
         compile $ pandocCompiler
