@@ -29,6 +29,7 @@ main = hakyll $ do
     match (fromList toplevel) $ do
         route   $ cleanRoute
         compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
             >>= cleanIndexUrls
@@ -57,7 +58,7 @@ main = hakyll $ do
             let itemCtx = postCtx `mappend` bodyField "content"
             let archiveCtx =
                     listField "posts" itemCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
+                    constField "title" "Blog Archives"       `mappend`
                     defaultContext
 
             makeItem ""
@@ -72,7 +73,7 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    constField "title" ""                    `mappend`
+                    constField "title" "very.science"        `mappend`
                     defaultContext
 
             getResourceBody
