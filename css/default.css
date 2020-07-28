@@ -69,7 +69,7 @@ html, body {
 }
 
 body {
-    font-family: "Source Sans Pro";
+    font-family: "Lora";
     color: black;
     line-height: 300%;
     text-align: center;
@@ -110,6 +110,7 @@ body {
 
 #top-link-box {
    font-size: 18pt;
+   font-family: "Source Sans Pro";
    flex: 0 0 auto;
    /* border: 1px solid red; */
    height: 95px;
@@ -231,7 +232,7 @@ footer {
     text-align: left;
     min-width: 300px;
     max-width: 960px;
-    font-size: 18pt;
+    font-size: 15pt;
     font-weight: 300;
     line-height: 1.4;
     /* hyphens: auto; */
@@ -240,12 +241,11 @@ footer {
     /* text-justify: inter-word; */
 }
 
-div#main-content p {
+#main-content p {
     padding-top: 10px;
     padding-bottom: 10px;
     font-family: 'Lora', serif;
     font-weight: 400;
-    font-size: 15pt;
 }
 
 em {
@@ -258,7 +258,7 @@ b {
 }
 
 .semi-bold {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 i {
@@ -292,6 +292,10 @@ i {
     margin-top: 10px;
     margin-bottom: 10px;
     border: 1px dashed #ffd400;
+}
+
+.projects li :not(:last-child) {
+    margin-bottom: 6pt;
 }
 
 .archive h2 {
